@@ -1,0 +1,67 @@
+{
+    "name": "obydul/larable",
+    "description": "Collection of morphable features for Laravel Application.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Md Obydullah",
+            "email": "hi@obydul.me"
+        }
+    ],
+    "require": {
+        "laravel/framework": "^9.0|^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Obydul\\Larable\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.5",
+        "friendsofphp/php-cs-fixer": "^3.8",
+        "brainmaestro/composer-git-hooks": "dev-master",
+        "laravel/pint": "^1.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Obydul\\Larable\\LarableServiceProvider"
+            ]
+        },
+        "hooks": {
+            "pre-commit": [
+                "composer fix-style",
+                "composer test"
+            ],
+            "pre-push": [
+                "composer test",
+                "composer check-style"
+            ]
+        }
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "cghooks remove",
+            "cghooks add --ignore-lock",
+            "cghooks update"
+        ],
+        "post-merge": "composer install",
+        "post-install-cmd": [
+            "cghooks remove",
+            "cghooks add --ignore-lock",
+            "cghooks update"
+        ],
+        "cghooks": "vendor/bin/cghooks",
+        "check-style": "vendor/bin/pint --test",
+        "fix-style": "vendor/bin/pint"
+    },
+    "scripts-descriptions": {
+        "check-style": "Run style checks (only dry run - no fixing!).",
+        "fix-style": "Run style checks and fix violations."
+    }
+}

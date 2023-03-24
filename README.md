@@ -1,7 +1,7 @@
 Larable
 ---
 
-Collection of morphable packages/features for Laravel application.
+Collection of morphable features and packages for Laravel application.
 
 [![CI](https://github.com/mdobydullah/larable/actions/workflows/ci.yml/badge.svg)](https://github.com/mdobydullah/larable/actions/workflows/ci.yml)
 

@@ -70,9 +70,9 @@ trait Subscribable
     {
         return $this->belongsToMany(
             config('auth.providers.users.model'),
-            config('larable.subscribe.subscriptions_table'),
+            config('larable_subscribe.subscriptions_table'),
             'subscribable_id',
-            config('larable.subscribe.user_foreign_key')
+            config('larable_subscribe.user_foreign_key')
         )
             ->where('subscribable_type', $this->getMorphClass())
             ->withPivot(['subscribable_id', 'subscribable_type', 'user_id', 'created_at', 'updated_at']);
@@ -80,7 +80,7 @@ trait Subscribable
 
     public function subscriptionsHistory(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(config('larable.subscribe.subscription_model'), 'subscribable_id')
+        return $this->hasMany(config('larable_subscribe.subscription_model'), 'subscribable_id')
             ->where('subscribable_type', $this->getMorphClass());
     }
 }

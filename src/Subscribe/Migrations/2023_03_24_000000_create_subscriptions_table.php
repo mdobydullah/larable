@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create(config('larable.subscribe.subscriptions_table'), function (Blueprint $table) {
+        Schema::create(config('larable_subscribe.subscriptions_table'), function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger(config('larable.subscribe.user_foreign_key'))->index()->comment('user_id');
+            $table->unsignedBigInteger(config('larable_subscribe.user_foreign_key'))->index()->comment('user_id');
             $table->morphs('subscribable');
             $table->timestamps();
         });
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('larable.subscribe.subscriptions_table'));
+        Schema::dropIfExists(config('larable_subscribe.subscriptions_table'));
     }
 };

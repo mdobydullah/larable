@@ -34,7 +34,7 @@ class Followable extends Model
 
     public function __construct(array $attributes = [])
     {
-        $this->table = config('larable.follow.followers_table', 'followers');
+        $this->table = config('larable_follow.followers_table', 'followers');
 
         parent::__construct($attributes);
     }
@@ -44,10 +44,10 @@ class Followable extends Model
         parent::boot();
 
         self::saving(function ($follower) {
-            $userForeignKey = config('larable.follow.user_foreign_key', 'user_id');
+            $userForeignKey = config('larable_follow.user_foreign_key', 'user_id');
             $follower->setAttribute($userForeignKey, $follower->{$userForeignKey} ?: auth()->id());
 
-            if (config('larable.follow.uuids')) {
+            if (config('larable_follow.uuids')) {
                 $follower->setAttribute($follower->getKeyName(), $follower->{$follower->getKeyName()} ?: (string) Str::orderedUuid());
             }
         });
@@ -60,7 +60,7 @@ class Followable extends Model
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(config('auth.providers.users.model'), config('larable.follow.user_foreign_key', 'user_id'));
+        return $this->belongsTo(config('auth.providers.users.model'), config('larable_follow.user_foreign_key', 'user_id'));
     }
 
     public function follower(): BelongsTo
@@ -81,7 +81,7 @@ class Followable extends Model
 
     public function scopeFollowedBy(Builder $query, Model $follower): Builder
     {
-        return $query->where(config('larable.follow.user_foreign_key', 'user_id'), $follower->getKey());
+        return $query->where(config('larable_follow.user_foreign_key', 'user_id'), $follower->getKey());
     }
 
     public function scopeAccepted(Builder $query): Builder

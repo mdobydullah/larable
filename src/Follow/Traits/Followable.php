@@ -72,7 +72,7 @@ trait Followable
          * @var Model $this
          */
         return $this->hasMany(
-            config('larable.follow.followables_model', \Obydul\Larable\Follow\Followable::class),
+            config('larable_follow.followers_model', \Obydul\Larable\Follow\Followable::class),
             'followable_id',
         )->where('followable_type', $this->getMorphClass());
     }
@@ -81,9 +81,9 @@ trait Followable
     {
         return $this->belongsToMany(
             config('auth.providers.users.model'),
-            config('larable.follow.followers_table', 'followables'),
+            config('larable_follow.followers_table', 'followables'),
             'followable_id',
-            config('larable.follow.user_foreign_key', 'user_id')
+            config('larable_follow.user_foreign_key', 'user_id')
         )->where('followable_type', $this->getMorphClass())
             ->withPivot(['accepted_at']);
     }

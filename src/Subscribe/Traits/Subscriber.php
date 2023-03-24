@@ -18,8 +18,8 @@ trait Subscriber
     {
         /* @var \Obydul\Larable\Subscribe\Traits\Subscribable|Model $object */
         if (! $this->hasSubscribed($object)) {
-            $subscribe = app(config('larable.subscribe.subscription_model'));
-            $subscribe->{config('larable.subscribe.user_foreign_key')} = $this->getKey();
+            $subscribe = app(config('larable_subscribe.subscription_model'));
+            $subscribe->{config('larable_subscribe.user_foreign_key')} = $this->getKey();
             $subscribe->subscribable_id = $object->getKey();
             $subscribe->subscribable_type = $object->getMorphClass();
 
@@ -36,7 +36,7 @@ trait Subscriber
         $relation = $this->subscriptions()
             ->where('subscribable_id', $object->getKey())
             ->where('subscribable_type', $object->getMorphClass())
-            ->where(config('larable.subscribe.user_foreign_key'), $this->getKey())
+            ->where(config('larable_subscribe.user_foreign_key'), $this->getKey())
             ->first();
 
         if ($relation) {
@@ -109,6 +109,6 @@ trait Subscriber
 
     public function subscriptions(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(config('larable.subscribe.subscription_model'), config('larable.subscribe.user_foreign_key'), $this->getKeyName());
+        return $this->hasMany(config('larable_subscribe.subscription_model'), config('larable_subscribe.user_foreign_key'), $this->getKeyName());
     }
 }

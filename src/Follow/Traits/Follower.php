@@ -101,8 +101,8 @@ trait Follower
          * @var Model $this
          */
         return $this->hasMany(
-            config('larable.follow.followables_model', \Obydul\Larable\Follow\Followable::class),
-            config('larable.follow.user_foreign_key', 'user_id'),
+            config('larable_follow.followers_model', \Obydul\Larable\Follow\Followable::class),
+            config('larable_follow.user_foreign_key', 'user_id'),
             $this->getKeyName()
         );
     }

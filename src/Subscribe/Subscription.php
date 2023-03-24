@@ -24,7 +24,7 @@ class Subscription extends Model
 
     public function __construct(array $attributes = [])
     {
-        $this->table = \config('larable.subscribe.subscriptions_table');
+        $this->table = \config('larable_subscribe.subscriptions_table');
 
         parent::__construct($attributes);
     }
@@ -34,10 +34,10 @@ class Subscription extends Model
         parent::boot();
 
         self::saving(function (Subscription $subscription) {
-            $userForeignKey = \config('larable.subscribe.user_foreign_key');
+            $userForeignKey = \config('larable_subscribe.user_foreign_key');
             $subscription->{$userForeignKey} = $subscription->{$userForeignKey} ?: auth()->id();
 
-            if (\config('larable.subscribe.uuids')) {
+            if (\config('larable_subscribe.uuids')) {
                 $subscription->{$subscription->getKeyName()} = $subscription->{$subscription->getKeyName()} ?: (string) Str::orderedUuid();
             }
         });
@@ -50,7 +50,7 @@ class Subscription extends Model
 
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(\config('auth.providers.users.model'), \config('larable.subscribe.user_foreign_key'));
+        return $this->belongsTo(\config('auth.providers.users.model'), \config('larable_subscribe.user_foreign_key'));
     }
 
     public function subscriber(): \Illuminate\Database\Eloquent\Relations\BelongsTo

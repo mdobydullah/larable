@@ -12,6 +12,7 @@ class Helper
             'Like',
             'Follow',
             'Subscribe',
+            'Favorite',
         ];
 
         // read root composer.json

@@ -31,11 +31,12 @@ php artisan vendor:publish --provider="Obydul\\Larable\\LarableServiceProvider" 
 
 The available morphable packages/features.
 
-| Service Name | Feature/Package                                                             | Description                         |
-|--------------|-----------------------------------------------------------------------------|-------------------------------------|
-| Like         | [overtrue/laravel-like](https://github.com/overtrue/laravel-like)           | User like feature feature.          |
-| Follow       | [overtrue/laravel-follow](https://github.com/overtrue/laravel-follow)       | User follow unfollow feature .      |
-| Subscribe    | [overtrue/laravel-subscribe](https://github.com/overtrue/laravel-subscribe) | User subscribe unsubscribe feature. |
+| Service Name | Feature/Package                                                           | Description                         |
+|--------------|---------------------------------------------------------------------------|-------------------------------------|
+| Like         | [laravel-like:v5.1.1](https://github.com/overtrue/laravel-like)           | User like feature feature.          |
+| Follow       | [laravel-follow:v5.1.0](https://github.com/overtrue/laravel-follow)       | User follow unfollow feature .      |
+| Subscribe    | [laravel-subscribe:v4.2.0](https://github.com/overtrue/laravel-subscribe) | User subscribe unsubscribe feature. |
+| Favorite     | [laravel-favorite:v5.1.0](https://github.com/overtrue/laravel-favorite)   | User favorite unfavorite feature.   |
 
 ## Cleanup Unused Services
 

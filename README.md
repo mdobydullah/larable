@@ -31,10 +31,11 @@ php artisan vendor:publish --provider="Obydul\\Larable\\LarableServiceProvider" 
 
 The available morphable packages/features.
 
-| Service Name | Feature/Package                                                             | Description                                     |
-|--------------|-----------------------------------------------------------------------------|-------------------------------------------------|
-| Subscribe    | [overtrue/laravel-subscribe](https://github.com/overtrue/laravel-subscribe) | User subscribe unsubscribe feature for Laravel. |
-| Follow       | [overtrue/laravel-follow](https://github.com/overtrue/laravel-follow)       | User follow unfollow feature for Laravel.       |
+| Service Name | Feature/Package                                                             | Description                         |
+|--------------|-----------------------------------------------------------------------------|-------------------------------------|
+| Like         | [overtrue/laravel-like](https://github.com/overtrue/laravel-like)           | User like feature feature.          |
+| Follow       | [overtrue/laravel-follow](https://github.com/overtrue/laravel-follow)       | User follow unfollow feature .      |
+| Subscribe    | [overtrue/laravel-subscribe](https://github.com/overtrue/laravel-subscribe) | User subscribe unsubscribe feature. |
 
 ## Cleanup Unused Services
 
@@ -50,14 +51,14 @@ Currently, there are 2 services. We will keep adding more services. The chances 
     },
     "extra": {
         "obydul/larable": [
-            "Subscribe",
+            "Like",
             "Follow"
         ]
     }
 }
 ```
 
-This example will remove all services other than "Subscribe" and "Follow" when ```composer update``` or a fresh ```composer install``` is run.
+This example will remove all services other than "Like" and "Follow" when ```composer update``` or a fresh ```composer install``` is run.
 
 **IMPORTANT**: If you add any services back in ```composer.json```, you will need to remove the ```vendor/obydul/larable``` directory explicitly for the change you made to have effect:
 

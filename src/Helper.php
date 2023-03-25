@@ -9,8 +9,9 @@ class Helper
     {
         // all services
         $all_services = [
-            'Subscribe',
+            'Like',
             'Follow',
+            'Subscribe',
         ];
 
         // read root composer.json

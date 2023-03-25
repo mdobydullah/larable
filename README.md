@@ -37,6 +37,7 @@ The available morphable packages/features.
 | Follow       | [laravel-follow:v5.1.0](https://github.com/overtrue/laravel-follow)       | User follow unfollow feature .      |
 | Subscribe    | [laravel-subscribe:v4.2.0](https://github.com/overtrue/laravel-subscribe) | User subscribe unsubscribe feature. |
 | Favorite     | [laravel-favorite:v5.1.0](https://github.com/overtrue/laravel-favorite)   | User favorite unfavorite feature.   |
+| Vote         | [laravel-vote:v3.1.0](https://github.com/overtrue/laravel-vote)           | User voting feature.                |
 
 ## Cleanup Unused Services
 
@@ -64,7 +65,7 @@ This example will remove all services other than "Like" and "Follow" when ```com
 **IMPORTANT**: If you add any services back in ```composer.json```, you will need to remove the ```vendor/obydul/larable``` directory explicitly for the change you made to have effect:
 
 ```
-rm -r obydul/larable
+rm -r vendor/obydul/larable
 composer update
 ```
 

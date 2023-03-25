@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create(config('larable_subscribe.subscriptions_table'), function (Blueprint $table) {
+        Schema::create(config('larable_subscribe.subscriptions_table', 'larable_subscriptions'), function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger(config('larable_subscribe.user_foreign_key'))->index()->comment('user_id');
             $table->morphs('subscribable');

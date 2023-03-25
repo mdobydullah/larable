@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create(config('larable_follow.followers_table', 'followers'), function (Blueprint $table) {
+        Schema::create(config('larable_follow.followers_table', 'larable_followers'), function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger(config('larable_follow.user_foreign_key', 'user_id'))->index()->comment('user_id');
             if (config('larable_follow.uuids')) {

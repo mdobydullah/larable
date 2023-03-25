@@ -31,10 +31,10 @@ php artisan vendor:publish --provider="Obydul\\Larable\\LarableServiceProvider" 
 
 The available morphable packages/features.
 
-| Service Name | Feature/Package                                                             | Description                                                 |
-|--------------|-----------------------------------------------------------------------------|-------------------------------------------------------------|
-| Subscribe    | [overtrue/laravel-subscribe](https://github.com/overtrue/laravel-subscribe) | User subscribe/unsubscribe feature for Laravel Application. |
-| Follow       | [overtrue/laravel-follow](https://github.com/overtrue/laravel-follow)       | User follow unfollow system for Laravel.                    |
+| Service Name | Feature/Package                                                             | Description                                     |
+|--------------|-----------------------------------------------------------------------------|-------------------------------------------------|
+| Subscribe    | [overtrue/laravel-subscribe](https://github.com/overtrue/laravel-subscribe) | User subscribe unsubscribe feature for Laravel. |
+| Follow       | [overtrue/laravel-follow](https://github.com/overtrue/laravel-follow)       | User follow unfollow feature for Laravel.       |
 
 ## Cleanup Unused Services
 

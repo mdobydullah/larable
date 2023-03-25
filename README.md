@@ -41,7 +41,7 @@ The available morphable packages/features.
 
 ## Cleanup Unused Services
 
-Currently, there are 2 services. We will keep adding more services. The chances are good that you will not want them all. In order to avoid shipping these dependencies with your code, you can run the ```Obydul\Larable\Task\Composer::cleanup``` task and specify the services you want to keep in ```composer.json```:
+Currently, there are 5 services. We will keep adding more services. The chances are good that you will not want them all. In order to avoid shipping these dependencies with your code, you can run the ```Obydul\Larable\Task\Composer::cleanup``` task and specify the services you want to keep in ```composer.json```:
 
 ```json
 {
